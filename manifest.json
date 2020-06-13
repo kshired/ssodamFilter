@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "ssodam filter",
+    "version" : "0.1",
+    "permissions":[
+        "storage",
+        "activeTab"
+    ],
+    "icons":{
+        "128": "img/icon.png"
+    },
+    "description": "filtering posts by keywords",
+    "browser_action":{
+        "default_popup": "app/popup.html"
+    },
+    "background":{
+        "presistent": false
+    },
+    "content_scripts":[{
+        "matches":[
+            "*://ssodam.com/*"
+        ],
+        "js": ["app/filtering.js"]
+    }]
+}
